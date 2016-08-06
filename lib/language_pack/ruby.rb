@@ -369,6 +369,8 @@ ERROR_MSG
             FileUtils.rm(file)
             FileUtils.rm(sha_file)
           else
+            topic "Line 372 #{file}"
+            topic "#{ruby_version.version_for_download}.tgz"
             @fetchers[:mri].fetch_untar("#{ruby_version.version_for_download}.tgz")
           end
         end
