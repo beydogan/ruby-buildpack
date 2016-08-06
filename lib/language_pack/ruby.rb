@@ -347,6 +347,7 @@ SHELL
             sha_file = "#{file}.sha1"
             @fetchers[:rbx].fetch(file)
             @fetchers[:rbx].fetch(sha_file)
+            topic "FooBar"
 
             expected_checksum = File.read(sha_file).chomp
             actual_checksum   = Digest::SHA1.file(file).hexdigest
