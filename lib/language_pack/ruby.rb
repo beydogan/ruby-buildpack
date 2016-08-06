@@ -330,7 +330,7 @@ SHELL
   def install_ruby
     instrument 'ruby.install_ruby' do
       return false unless ruby_version
-
+      topic "Line 333"
       if ruby_version.build?
         FileUtils.mkdir_p(build_ruby_path)
         Dir.chdir(build_ruby_path) do
@@ -347,6 +347,9 @@ SHELL
           if ruby_version.rbx?
             file     = "#{ruby_version.version_for_download}.tar.bz2"
             sha_file = "#{file}.sha1"
+            topic "Line 350 #{file}"
+            topic "Line 351 #{sha_file}"
+
             @fetchers[:rbx].fetch(file)
             @fetchers[:rbx].fetch(sha_file)
             topic "FooBar"
