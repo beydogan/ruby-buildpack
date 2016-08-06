@@ -48,6 +48,7 @@ module LanguagePack
 
     def fetch_cdn(url)
       url = @config[url] || url
+      topic(url)
       Pathname.new(url)
     end
   end
