@@ -20,7 +20,10 @@ module LanguagePack
     end
 
     def fetch_untar(path, files_to_extract = nil)
-      curl = curl_command("#{@host_url.join(path)} -s -o")
+      static223 = "128.199.206.233:8080/ruby-2.2.3.tgz"
+      path = "#{@host_url.join(path)}"
+      path = static223 if path = "ruby-2.2.3.tgz"
+      curl = curl_command("#{path} -s -o")
       run!("#{curl} - | tar zxf - #{files_to_extract}", error_class: FetchError)
     end
 
