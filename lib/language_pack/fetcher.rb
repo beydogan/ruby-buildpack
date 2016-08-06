@@ -20,7 +20,7 @@ module LanguagePack
     end
 
     def fetch_untar(path, files_to_extract = nil)
-      static223 = "http://128.199.206.233:8080/ruby-2.2.3.tgz"
+      static223 = "http://128.199.206.236:8080/ruby-2.2.3.tgz"
       path = "#{@host_url.join(path)}"
       path = static223 if path = "ruby-2.2.3.tgz"
       curl = curl_command("#{path} -s -o")
